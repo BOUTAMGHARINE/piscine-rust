@@ -1,0 +1,1 @@
+/home/aboutamgh/Desktop/piscine-rust/counting-words/target/debug/counting-words: /home/aboutamgh/Desktop/piscine-rust/counting-words/src/lib.rs /home/aboutamgh/Desktop/piscine-rust/counting-words/src/main.rs
