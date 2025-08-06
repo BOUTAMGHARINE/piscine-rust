@@ -1,0 +1,1 @@
+/home/yhrouk/anouar/drawing/piscine-rust/inv_pyramid/target/debug/inv_pyramid: /home/yhrouk/anouar/drawing/piscine-rust/inv_pyramid/src/lib.rs /home/yhrouk/anouar/drawing/piscine-rust/inv_pyramid/src/main.rs
