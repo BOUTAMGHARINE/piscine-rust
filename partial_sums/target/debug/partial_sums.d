@@ -1,0 +1,1 @@
+/home/yhrouk/anouar/drawing/piscine-rust/partial_sums/target/debug/partial_sums: /home/yhrouk/anouar/drawing/piscine-rust/partial_sums/src/lib.rs /home/yhrouk/anouar/drawing/piscine-rust/partial_sums/src/main.rs
