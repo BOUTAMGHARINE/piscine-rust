@@ -1,0 +1,1 @@
+/home/aboutamgh/Documents/piscine-rust/insertion-sort/target/debug/insertion-sort: /home/aboutamgh/Documents/piscine-rust/insertion-sort/src/lib.rs /home/aboutamgh/Documents/piscine-rust/insertion-sort/src/main.rs
