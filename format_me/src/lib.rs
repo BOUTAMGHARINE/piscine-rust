@@ -1,0 +1,50 @@
+use std::fmt;
+
+pub struct Park {
+
+    pub name : String,
+    pub park_type : ParkType,
+    pub address : String,
+    pub cap : String,
+    pub state : String
+
+
+}
+  
+pub enum ParkType {
+
+     Garden,
+     Forest,
+     Playground
+
+
+}
+
+impl fmt::Display for Park {
+         fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            let name = if self.name.is_empty(){"No name"}else {&self.name};
+            let address = if self.address.is_empty(){"No address"}else {&self.address};
+            let cap = if self.cap.is_empty(){"No cap"}else{&self.cap};
+            let state = if self.state.is_empty(){"No state"}else{&self.state};
+            write!(f,"{} - {}, {}, {} - {}",self.park_type,name,address,cap,state)
+            
+        
+    }
+
+}
+
+impl fmt::Display for ParkType {
+          fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            match self {
+                ParkType::Garden=>write!(f,"garden"),
+                ParkType::Forest=>write!(f,"forest"),
+                ParkType::Playground=>write!(f,"playground")
+                
+            }
+       
+   }
+
+}
+
+/*garden - Les Tuileries, Pl. de la Concorde, 75001 - France
+playground - No name, No address, No cap - No state*/
