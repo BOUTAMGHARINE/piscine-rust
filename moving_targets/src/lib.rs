@@ -1,0 +1,49 @@
+pub struct Field {
+    head: Link,
+}
+
+type Link =Option<Box<Node>>;
+
+struct Node {
+    elem: Target,
+    next: Link,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub struct Target {
+    pub size: u32,
+    pub xp: u32,
+}
+impl Field {
+    pub fn new() -> Self {
+        Self {
+            head : None
+        }
+    }
+    pub fn push(&mut self, target: Target) {
+        let new = Box::new(Node{
+            elem:target,
+            next:self.head.take()
+
+        });
+        self.head = Some (new)
+    }
+    pub fn pop(&mut self) -> Option<Target> {
+        match self.head.take() {
+            None=>None,
+            Some(node)=>{
+                let node = *node;
+                self.head = node.next;
+                Some(node.elem)
+            }
+        }
+      
+    }
+    
+    pub fn peek(&self) -> Option<&Target> {
+        self.head.as_ref().map(|n| &n.elem)
+    }
+    pub fn peek_mut(&mut self) -> Option<&mut Target> {
+        self.head.as_mut().map(|n| &mut n.elem)
+    }
+}
