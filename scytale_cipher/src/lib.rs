@@ -1,31 +1,17 @@
 pub fn scytale_decoder(s: String, letters_per_turn: u32) -> Option<String> {
    
-    let len = s.len() as u32;
-    if s.len()==0 || letters_per_turn == 0  {
-        return None
-    }else if letters_per_turn>= len{
-        return Some(s)
-    }
-    let n = letters_per_turn;
-    let chars: Vec<char> = s.chars().collect();
-    let mut res = String::new();
-    let mut count : u32= 0;
-    
-    res.push(chars[0]);
-     while res.len() < s.len(){
-      if count + n < len {
-        count+=n;
-      }else{
-        if n % 2 == 0{
-        count = count + n - len;
-        }else{
-        count = count + n - len +1 ;
-      }
+ let k = letters_per_turn as usize;
+
+ if k == 0 || s.is_empty(){
+    return None;
  }
-  
-      res.push(chars[count as usize])
-      }
-    Some(res)
+ let mut tab = vec![String::new();k];
+
+ for (i,v) in s.chars().enumerate() {
+    tab[i%k].push(v);
+ }
+
+ Some(tab.concat())
 
 }
 //  scytale_decoder("aebfcgd".to_string(), 2),
